@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TestService } from './services';
-import { TestComponent } from './components';
+import { TestService } from './services/test.service';
+import { TestComponent } from './components/test/test.component';
 
 export const Test1Token = new InjectionToken('Test1Token');
 export const Test2Token = new InjectionToken('Test2Token');
