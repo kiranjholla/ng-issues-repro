@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "repro": "rimraf dist && ng build my-lib --prod && ng build my-app --prod"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "^3.0.0",
     "protractor": "~5.4.0",
+    "rimraf": "^2.6.2",
     "ts-node": "~5.0.1",
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
