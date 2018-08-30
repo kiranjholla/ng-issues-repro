@@ -3,3 +3,4 @@
  */
 
 export * from './lib/modules';
+export * from './lib/modules/test/test.module';
