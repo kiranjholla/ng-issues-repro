@@ -1,6 +1,8 @@
 import { NgModule, ModuleWithProviders, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TestService } from './services/test.service';
+
+import { TestService } from './services';
+import { TestComponent } from './components';
 
 export const Test1Token = new InjectionToken('Test1Token');
 export const Test2Token = new InjectionToken('Test2Token');
@@ -13,7 +15,12 @@ export function testServiceFactory(cfg1: any, cfg2: any) {
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [
+    TestComponent
+  ],
+  exports: [
+    TestComponent
+  ]
 })
 export class TestModule {
   static forRoot(cfg1: any, cfg2: any): ModuleWithProviders {

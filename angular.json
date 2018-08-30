@@ -21,7 +21,7 @@
             "index": "projects/my-app/src/index.html",
             "main": "projects/my-app/src/main.ts",
             "polyfills": "projects/my-app/src/polyfills.ts",
-            "tsConfig": "projects/my-app/src/tsconfig.app.json",
+            "tsConfig": "projects/my-app/tsconfig.app.json",
             "assets": [
               "projects/my-app/src/favicon.ico",
               "projects/my-app/src/assets"
@@ -54,18 +54,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ngconcepts:build"
+            "browserTarget": "my-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ngconcepts:build:production"
+              "browserTarget": "my-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngconcepts:build"
+            "browserTarget": "my-app:build"
           }
         },
         "test": {
@@ -73,8 +73,8 @@
           "options": {
             "main": "projects/my-app/src/test.ts",
             "polyfills": "projects/my-app/src/polyfills.ts",
-            "tsConfig": "projects/my-app/src/tsconfig.spec.json",
-            "karmaConfig": "projects/my-app/src/karma.conf.js",
+            "tsConfig": "projects/my-app/tsconfig.spec.json",
+            "karmaConfig": "projects/my-app/karma.conf.js",
             "styles": [
               "projects/my-app/src/styles.scss"
             ],
@@ -89,8 +89,8 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/my-app/src/tsconfig.app.json",
-              "projects/my-app/src/tsconfig.spec.json"
+              "projects/my-app/tsconfig.app.json",
+              "projects/my-app/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -131,6 +131,11 @@
       "sourceRoot": "projects/my-lib/src",
       "projectType": "library",
       "prefix": "lib",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
