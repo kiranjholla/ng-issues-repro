@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { MyLibModule } from 'my-lib';
+import { MyLibModule, TestModule } from 'my-lib';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,12 @@ import { MyLibModule } from 'my-lib';
   ],
   imports: [
     BrowserModule,
-    MyLibModule
+    MyLibModule,
+    TestModule.forRoot({
+      test: 'Test1'
+    }, {
+      test: 'Test2'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
